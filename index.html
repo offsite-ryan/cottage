@@ -27,6 +27,7 @@
             width: 90%;
         }
     }
+
     img {
         cursor: pointer;
     }
@@ -40,12 +41,31 @@
     </div>
 
     <div class="w3-bar w3-black">
-        <button id="btn-tab-overview" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;" onclick="openCity('tab-overview')">Overview</button>
-        <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor Detail</button>
-        <button id="btn-tab-3d-viewer" class="w3-bar-item w3-button" onclick="openCity('tab-3d-viewer')">3d Viewer</button>
+        <button id="btn-tab-property" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
+            onclick="openCity('tab-property')">Property</button>
+        <button id="btn-tab-overview" class="w3-bar-item w3-button" style=""
+            onclick="openCity('tab-overview')">Overview</button>
+        <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor
+            Detail</button>
+        <button id="btn-tab-3d-viewer" class="w3-bar-item w3-button" onclick="openCity('tab-3d-viewer')">3d
+            Viewer</button>
     </div>
 
-    <div id="tab-overview" class="w3-container city">
+    <div id="tab-property" class="w3-container city">
+        <!-- Property -->
+        <h6 style="border-bottom: 1px solid">Property</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="property">
+                <div>
+                    <div w3-repeat="property" class="w3-card w3-padding w3-col s12 m6 l4">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-overview" class="w3-container city" style="display:none">
         <!-- Overview -->
         <h6 style="border-bottom: 1px solid">Overview</h6>
         <div class="w3-row-padding w3-margin-top">
@@ -111,6 +131,14 @@
 
 <script>
     const content = {
+        property: [
+            { prefix: 'p', id: '1', name: '', url: './images/lot-1.png' },
+            { prefix: 'p', id: '2', name: '', url: './images/lot-2.png' },
+            { prefix: 'p', id: '3', name: '', url: './images/lot-3.png' },
+            { prefix: 'p', id: '4', name: '', url: './images/lot-4.png' },
+            { prefix: 'p', id: '5', name: '', url: './images/lot-5.png' },
+            // { prefix: 'p', id: '3', name: '', url: './images/lot-6.png' },
+        ],
         overview: [
             { prefix: 'o', id: '1', name: 'Street Side', url: './images/overview-1.png' },
             { prefix: 'o', id: '2', name: 'Canal Side', url: './images/overview-2.png' },
@@ -141,6 +169,7 @@
         ],
     }
     w3.includeHTML(() => {
+        w3.displayObject("property", content);
         w3.displayObject("overview", content);
         w3.displayObject("garage", content);
         w3.displayObject("second", content);
@@ -154,10 +183,10 @@
             x[i].style.display = "none";
         }
         document.getElementById(cityName).style.display = "block";
-        ['btn-tab-overview','btn-tab-floor-detail','btn-tab-3d-viewer'].forEach((v)=>{
-            document.getElementById(v).style.borderBottom=null;    
+        ['btn-tab-overview', 'btn-tab-floor-detail', 'btn-tab-3d-viewer', 'btn-tab-property'].forEach((v) => {
+            document.getElementById(v).style.borderBottom = null;
         })
-        document.getElementById('btn-'+cityName).style.borderBottom='7px solid #0467b6';
+        document.getElementById('btn-' + cityName).style.borderBottom = '7px solid #0467b6';
     }
 </script>
 
