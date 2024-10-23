@@ -41,9 +41,9 @@
     </div>
 
     <div class="w3-bar w3-black">
-        <button id="btn-tab-property" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
-            onclick="openCity('tab-property')">Property</button>
-        <button id="btn-tab-overview" class="w3-bar-item w3-button" style=""
+        <!-- <button id="btn-tab-property" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
+            onclick="openCity('tab-property')">Property</button> -->
+        <button id="btn-tab-overview" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
             onclick="openCity('tab-overview')">Overview</button>
         <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor
             Detail</button>
@@ -51,7 +51,7 @@
             Viewer</button>
     </div>
 
-    <div id="tab-property" class="w3-container city">
+    <div id="tab-property" class="w3-container city" style="display:none">
         <!-- Property -->
         <h6 style="border-bottom: 1px solid">Property</h6>
         <div class="w3-row-padding w3-margin-top">
@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <div id="tab-overview" class="w3-container city" style="display:none">
+    <div id="tab-overview" class="w3-container city" style="">
         <!-- Overview -->
         <h6 style="border-bottom: 1px solid">Overview</h6>
         <div class="w3-row-padding w3-margin-top">
@@ -132,12 +132,12 @@
 <script>
     const content = {
         property: [
-            { prefix: 'p', id: '1', name: '', url: './images/lot-1.png' },
-            { prefix: 'p', id: '2', name: '', url: './images/lot-2.png' },
-            { prefix: 'p', id: '3', name: '', url: './images/lot-3.png' },
-            { prefix: 'p', id: '4', name: '', url: './images/lot-4.png' },
-            { prefix: 'p', id: '5', name: '', url: './images/lot-5.png' },
-            { prefix: 'p', id: '6', name: '', url: './images/lot-6.png' },
+            // { prefix: 'p', id: '1', name: '', url: './images/lot-1.png' },
+            // { prefix: 'p', id: '2', name: '', url: './images/lot-2.png' },
+            // { prefix: 'p', id: '3', name: '', url: './images/lot-3.png' },
+            // { prefix: 'p', id: '4', name: '', url: './images/lot-4.png' },
+            // { prefix: 'p', id: '5', name: '', url: './images/lot-5.png' },
+            // { prefix: 'p', id: '6', name: '', url: './images/lot-6.png' },
         ],
         overview: [
             { prefix: 'o', id: '1', name: 'Street Side', url: './images/overview-1.png' },
