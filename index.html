@@ -36,107 +36,6 @@
         <h6 class="">2024.10.22</h6>
     </div>
 
-    <h4>Ground Floor</h4>
-    <hr />
-
-    <div class="w3-row-padding w3-margin-top">
-        <div class="w3-quarter">
-            <div class="w3-card">
-                <img src="./images/garage-floor-plan.png" style="width:100%;"
-                    onclick="document.getElementById('modalG1').style.display='block'" class="w3-hover-opacity">
-                <div class="w3-container">
-                    <h5></h5>
-                </div>
-
-                <div id="modalG1" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
-                    onclick="this.style.display='none'">
-                    <img class="w3-modal-content" src="./images/garage-floor-plan.png">
-                </div>
-            </div>
-        </div>
-
-        <div class="w3-quarter">
-            <div class="w3-card">
-                <img src="./images/garage-floor.png" style="width:100%;"
-                    onclick="document.getElementById('modalG2').style.display='block'" class="w3-hover-opacity">
-                <div class="w3-container">
-                    <h5></h5>
-                </div>
-
-                <div id="modalG2" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
-                    onclick="this.style.display='none'">
-                    <img class="w3-modal-content" src="./images/garage-floor.png">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <h4>1<sup>st</sup> Floor</h4>
-    <hr />
-
-    <div class="w3-row-padding w3-margin-top">
-        <div class="w3-quarter">
-            <div class="w3-card">
-                <img src="./images/2nd-floor-plan.png" style="width:100%;"
-                    onclick="document.getElementById('modal01').style.display='block'" class="w3-hover-opacity">
-                <div class="w3-container">
-                    <h6>Monterosso</h6>
-                </div>
-
-                <div id="modal01" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
-                    onclick="this.style.display='none'">
-                    <img class="w3-modal-content" src="./images/2nd-floor-plan.png">
-                </div>
-            </div>
-        </div>
-
-        <div class="w3-quarter">
-            <div class="w3-card">
-                <img src="./images/2nd-floor.png" style="width:100%;"
-                    onclick="document.getElementById('modal02').style.display='block'" class="w3-hover-opacity">
-                <div class="w3-container">
-                    <h5>Monterosso</h5>
-                </div>
-
-                <div id="modal02" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
-                    onclick="this.style.display='none'">
-                    <img class="w3-modal-content" src="./images/2nd-floor.png">
-                </div>
-            </div>
-        </div>
-
-        <div class="w3-quarter">
-            <div class="w3-card">
-                <img src="./images/2nd-floor-2.png" style="width:100%;"
-                    onclick="document.getElementById('modal05').style.display='block'" class="w3-hover-opacity">
-                <div class="w3-container">
-                    <h5>Monterosso</h5>
-                </div>
-
-                <div id="modal05" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
-                    onclick="this.style.display='none'">
-                    <img class="w3-modal-content" src="./images/2nd-floor-2.png">
-                </div>
-            </div>
-        </div>
-
-        <div class="w3-quarter">
-            <div class="w3-card">
-                <img src="./images/2nd-floor-3.png" style="width:100%;"
-                    onclick="document.getElementById('modal06').style.display='block'" class="w3-hover-opacity">
-                <div class="w3-container">
-                    <h5>Monterosso</h5>
-                </div>
-
-                <div id="modal06" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
-                    onclick="this.style.display='none'">
-                    <img class="w3-modal-content" src="./images/2nd-floor-3.png">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Overview -->
     <h5 style="border-bottom: 1px solid">Overview</h5>
     <div class="w3-row-padding w3-margin-top">
@@ -186,22 +85,30 @@
         </div>
     </div>
 
+
+    <div data-share="041401252323452" data-version="1" class="ca-3d-viewer-embed">
+        <p><a href="https://www.chiefarchitect.com/to/view-3dv?share=041401252323452" class="ca-3d-viewer-embed-url">View <strong>2024.10.19_3rd_floor_main_30x50</strong></a> in Chief Architect&rsquo;s 3D Viewer.</p>
+    </div>
+    <script async src="https://embed.chiefarchitect.com/3DV/embed.js"></script>
 </body>
 
 <script>
     const content = {
         overview: [
-            { id: 1, name: 'Plan', url: './images/garage-floor-plan.png' },
+            { prefix: 'o', id: '1', name: 'Plan', url: './images/overview-1.png' },
         ],
         garage: [
-            { id: 1, name: 'Plan', url: './images/garage-floor-plan.png' },
-            { id: 2, name: 'Plan 2', url: './images/garage-floor.png' }
+            { prefix: 'g', id: '1', name: 'Plan', url: './images/garage-floor-plan.png' },
+            { prefix: 'g', id: '2', name: 'Plan 2', url: './images/garage-floor.png' }
         ],
         second: [
-            { id: 1, name: '', url: './images/garage-floor-plan.png' },
+            { prefix: '2', id: '1', name: '', url: './images/2nd-floor-plan.png' },
+            { prefix: '2', id: '2', name: '', url: './images/2nd-floor.png' },
+            { prefix: '2', id: '3', name: '', url: './images/2nd-floor-2.png' },
+            { prefix: '2', id: '4', name: '', url: './images/2nd-floor-3.png' },
         ],
         third: [
-            { id: 1, name: 'Plan', url: './images/garage-floor-plan.png' },
+            { prefix: '3', id: '1', name: 'Plan', url: null },
         ],
     }
     w3.includeHTML(() => {
