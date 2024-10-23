@@ -183,7 +183,8 @@
             x[i].style.display = "none";
         }
         document.getElementById(cityName).style.display = "block";
-        ['btn-tab-overview', 'btn-tab-floor-detail', 'btn-tab-3d-viewer', 'btn-tab-property'].forEach((v) => {
+        // , 'btn-tab-property'
+        ['btn-tab-overview', 'btn-tab-floor-detail', 'btn-tab-3d-viewer'].forEach((v) => {
             document.getElementById(v).style.borderBottom = null;
         })
         document.getElementById('btn-' + cityName).style.borderBottom = '7px solid #0467b6';
