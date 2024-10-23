@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<style>
+    body {
+        background-color: #000000cf;
+        color: white;
+        padding: 2%;
+        /* font-family: cursive !important; */
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: Verdana;
+    }
+</style>
+
+<body class="">
+
+    <div class="w3-container" style="background-color:#003158;">
+        <h2>Anchor Bay Cottage</h2>
+        <h6 class="">2024.10.22</h6>
+    </div>
+
+    <h4>Ground Floor</h4>
+    <hr />
+
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-quarter">
+            <div class="w3-card">
+                <img src="./images/garage-floor-plan.png" style="width:100%;"
+                    onclick="document.getElementById('modalG1').style.display='block'" class="w3-hover-opacity">
+                <div class="w3-container">
+                    <h5></h5>
+                </div>
+
+                <div id="modalG1" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
+                    onclick="this.style.display='none'">
+                    <img class="w3-modal-content" src="./images/garage-floor-plan.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div class="w3-card">
+                <img src="./images/garage-floor.png" style="width:100%;"
+                    onclick="document.getElementById('modalG2').style.display='block'" class="w3-hover-opacity">
+                <div class="w3-container">
+                    <h5></h5>
+                </div>
+
+                <div id="modalG2" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
+                    onclick="this.style.display='none'">
+                    <img class="w3-modal-content" src="./images/garage-floor.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h4>1<sup>st</sup> Floor</h4>
+    <hr />
+
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-quarter">
+            <div class="w3-card">
+                <img src="./images/2nd-floor-plan.png" style="width:100%;"
+                    onclick="document.getElementById('modal01').style.display='block'" class="w3-hover-opacity">
+                <div class="w3-container">
+                    <h6>Monterosso</h6>
+                </div>
+
+                <div id="modal01" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
+                    onclick="this.style.display='none'">
+                    <img class="w3-modal-content" src="./images/2nd-floor-plan.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div class="w3-card">
+                <img src="./images/2nd-floor.png" style="width:100%;"
+                    onclick="document.getElementById('modal02').style.display='block'" class="w3-hover-opacity">
+                <div class="w3-container">
+                    <h5>Monterosso</h5>
+                </div>
+
+                <div id="modal02" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
+                    onclick="this.style.display='none'">
+                    <img class="w3-modal-content" src="./images/2nd-floor.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div class="w3-card">
+                <img src="./images/2nd-floor-2.png" style="width:100%;"
+                    onclick="document.getElementById('modal05').style.display='block'" class="w3-hover-opacity">
+                <div class="w3-container">
+                    <h5>Monterosso</h5>
+                </div>
+
+                <div id="modal05" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
+                    onclick="this.style.display='none'">
+                    <img class="w3-modal-content" src="./images/2nd-floor-2.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div class="w3-card">
+                <img src="./images/2nd-floor-3.png" style="width:100%;"
+                    onclick="document.getElementById('modal06').style.display='block'" class="w3-hover-opacity">
+                <div class="w3-container">
+                    <h5>Monterosso</h5>
+                </div>
+
+                <div id="modal06" class="w3-center w3-modal w3-animate-zoom" style="background-color:#000000cf;"
+                    onclick="this.style.display='none'">
+                    <img class="w3-modal-content" src="./images/2nd-floor-3.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-margin-top">
+    </div>
+
+</body>
+
+</html>
