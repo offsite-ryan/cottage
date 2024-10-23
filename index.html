@@ -32,64 +32,78 @@
 <body class="">
 
     <div class="w3-container" style="background-color:#003158;">
-        <h2>Anchor Bay Cottage</h2>
-        <h6 class="">2024.10.22</h6>
+        <h2>Anchor Bay Cottage<div class="w3-medium w3-right">2024.10.22</div>
+        </h2>
     </div>
 
-    <!-- Overview -->
-    <h5 style="border-bottom: 1px solid">Overview</h5>
-    <div class="w3-row-padding w3-margin-top">
-        <div id="overview">
-            <div>
-                <div w3-repeat="overview" class="w3-card w3-padding w3-quarter">
-                    <div w3-include-html="cards.html"></div>
+    <div class="w3-bar w3-black">
+        <button id="btn-tab-overview" class="w3-bar-item w3-button" style="border-bottom:7px solid #003158;" onclick="openCity('tab-overview')">Overview</button>
+        <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor Detail</button>
+        <button id="btn-tab-3d-viewer" class="w3-bar-item w3-button" onclick="openCity('tab-3d-viewer')">3d Viewer</button>
+    </div>
+
+    <div id="tab-overview" class="w3-container city">
+        <!-- Overview -->
+        <h6 style="border-bottom: 1px solid">Overview</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="overview">
+                <div>
+                    <div w3-repeat="overview" class="w3-card w3-padding w3-col s12 m6 l4">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- Garage -->
-    <h5 style="border-bottom: 1px solid">Garage Floor</h5>
-    <div class="w3-row-padding w3-margin-top">
-        <div id="garage">
-            <div>
-                <div w3-repeat="garage" class="w3-card w3-padding w3-quarter">
-                    <div w3-include-html="cards.html"></div>
+    <div id="tab-floor-detail" class="w3-container city" style="display:none">
+        <!-- Garage -->
+        <h6 style="border-bottom: 1px solid">Garage Floor</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="garage">
+                <div>
+                    <div w3-repeat="garage" class="w3-card w3-padding w3-col s12 m3 l2">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 2nd Floor -->
-    <h5 style="border-bottom: 1px solid">2<sup>nd</sup> Floor</h5>
-    <div class="w3-row-padding w3-margin-top">
-        <div id="second">
-            <div>
-                <div w3-repeat="second" class="w3-card w3-padding w3-quarter">
-                    <div w3-include-html="cards.html"></div>
+        <!-- 2nd Floor -->
+        <h6 style="border-bottom: 1px solid">2<sup>nd</sup> Floor</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="second">
+                <div>
+                    <div w3-repeat="second" class="w3-card w3-padding w3-col s12 m3 l2">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 3rd Floor -->
-    <h5 style="border-bottom: 1px solid">3<sup>rd</sup> Floor</h5>
-    <div class="w3-row-padding w3-margin-top">
-        <div id="third">
-            <div>
-                <div w3-repeat="third" class="w3-card w3-padding w3-quarter">
-                    <div w3-include-html="cards.html"></div>
+        <!-- 3rd Floor -->
+        <h6 style="border-bottom: 1px solid">3<sup>rd</sup> Floor</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="third">
+                <div>
+                    <div w3-repeat="third" class="w3-card w3-padding w3-col s12 m3 l2">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-
-    <div data-share="041401252323452" data-version="1" class="ca-3d-viewer-embed">
-        <p><a href="https://www.chiefarchitect.com/to/view-3dv?share=041401252323452" class="ca-3d-viewer-embed-url">View <strong>2024.10.19_3rd_floor_main_30x50</strong></a> in Chief Architect&rsquo;s 3D Viewer.</p>
+    <div id="tab-3d-viewer" class="w3-container city" style="display:none">
+        <div data-share="041401252323452" data-version="1" class="ca-3d-viewer-embed">
+            <p><a href="https://www.chiefarchitect.com/to/view-3dv?share=041401252323452"
+                    class="ca-3d-viewer-embed-url">View <strong>2024.10.19_3rd_floor_main_30x50</strong></a> in Chief
+                Architect&rsquo;s 3D Viewer.</p>
+        </div>
+        <script async src="https://embed.chiefarchitect.com/3DV/embed.js"></script>
     </div>
-    <script async src="https://embed.chiefarchitect.com/3DV/embed.js"></script>
+
 </body>
 
 <script>
@@ -118,6 +132,19 @@
         w3.displayObject("second", content);
         w3.displayObject("third", content);
     });
+
+    function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+        ['btn-tab-overview','btn-tab-floor-detail','btn-tab-3d-viewer'].forEach((v)=>{
+            document.getElementById(v).style.borderBottom=null;    
+        })
+        document.getElementById('btn-'+cityName).style.borderBottom='7px solid #003158';
+    }
 </script>
 
 </html>
