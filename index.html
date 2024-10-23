@@ -21,6 +21,12 @@
     h6 {
         font-family: Verdana;
     }
+
+    @media (min-width: 993px) {
+        .w3-modal-content {
+            width: 80%;
+        }
+    }
 </style>
 
 <body class="">
@@ -131,9 +137,79 @@
         </div>
     </div>
 
+    <!-- Overview -->
+    <h5 style="border-bottom: 1px solid">Overview</h5>
     <div class="w3-row-padding w3-margin-top">
+        <div id="overview">
+            <div>
+                <div w3-repeat="overview" class="w3-card w3-padding w3-quarter">
+                    <div w3-include-html="cards.html"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Garage -->
+    <h5 style="border-bottom: 1px solid">Garage Floor</h5>
+    <div class="w3-row-padding w3-margin-top">
+        <div id="garage">
+            <div>
+                <div w3-repeat="garage" class="w3-card w3-padding w3-quarter">
+                    <div w3-include-html="cards.html"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2nd Floor -->
+    <h5 style="border-bottom: 1px solid">2<sup>nd</sup> Floor</h5>
+    <div class="w3-row-padding w3-margin-top">
+        <div id="second">
+            <div>
+                <div w3-repeat="second" class="w3-card w3-padding w3-quarter">
+                    <div w3-include-html="cards.html"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3rd Floor -->
+    <h5 style="border-bottom: 1px solid">3<sup>rd</sup> Floor</h5>
+    <div class="w3-row-padding w3-margin-top">
+        <div id="third">
+            <div>
+                <div w3-repeat="third" class="w3-card w3-padding w3-quarter">
+                    <div w3-include-html="cards.html"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
+
+<script>
+    const content = {
+        overview: [
+            { id: 1, name: 'Plan', url: './images/garage-floor-plan.png' },
+        ],
+        garage: [
+            { id: 1, name: 'Plan', url: './images/garage-floor-plan.png' },
+            { id: 2, name: 'Plan 2', url: './images/garage-floor.png' }
+        ],
+        second: [
+            { id: 1, name: '', url: './images/garage-floor-plan.png' },
+        ],
+        third: [
+            { id: 1, name: 'Plan', url: './images/garage-floor-plan.png' },
+        ],
+    }
+    w3.includeHTML(() => {
+        w3.displayObject("overview", content);
+        w3.displayObject("garage", content);
+        w3.displayObject("second", content);
+        w3.displayObject("third", content);
+    });
+</script>
 
 </html>
