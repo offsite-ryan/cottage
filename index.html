@@ -49,8 +49,8 @@
             onclick="openCity('tab-property')">Property</button> -->
         <button id="btn-tab-overview" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
             onclick="openCity('tab-overview')">Overview</button>
-        <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor
-            Detail</button>
+        <!-- <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor
+            Detail</button> -->
         <button id="btn-tab-3d-viewer" class="w3-bar-item w3-button" onclick="openCity('tab-3d-viewer')">3d
             Viewer</button>
     </div>
@@ -69,7 +69,54 @@
         </div>
     </div>
 
+    <!-- Overview -->
     <div id="tab-overview" class="w3-container city" style="">
+        <h6 style="border-bottom: 1px solid">Overview</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="overview">
+                <div>
+                    <div w3-repeat="overview" class="w3-card w3-padding w3-col s12 m6 l3">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h6 style="border-bottom: 1px solid">Floor Plans</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="floor_plans">
+                <div>
+                    <div w3-repeat="floor_plans" class="w3-card w3-padding w3-col s12 m6 l3">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h6 style="border-bottom: 1px solid">Floor Rendering</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="top_render">
+                <div>
+                    <div w3-repeat="top_render" class="w3-card w3-padding w3-col s12 m6 l3">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h6 style="border-bottom: 1px solid">Gallery</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="gallery">
+                <div>
+                    <div w3-repeat="gallery" class="w3-card w3-padding w3-col s12 m6 l3">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-floor-detail" class="w3-container city" style="display:none">
         <!-- Overview -->
         <h6 style="border-bottom: 1px solid">Overview</h6>
         <div class="w3-row-padding w3-margin-top">
@@ -81,9 +128,7 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="tab-floor-detail" class="w3-container city" style="display:none">
         <!-- Garage -->
         <h6 style="border-bottom: 1px solid">Garage Floor</h6>
         <div class="w3-row-padding w3-margin-top">
@@ -145,43 +190,66 @@
         ],
         overview: [
             { prefix: 'o', id: '1', name: 'Street Side', url: './images/overview-1.png' },
-            { prefix: 'o', id: '2', name: 'Canal Side', url: './images/overview-2.png' },
+            // { prefix: 'o', id: '2', name: 'Canal Side', url: './images/overview-2.png' },
             { prefix: 'o', id: '3', name: 'Canal Side', url: './images/overview-3.png' },
-            { prefix: 'o', id: '4', name: 'Canal Side', url: './images/overview-4.png' },
+            // { prefix: 'o', id: '4', name: 'Canal Side', url: './images/overview-4.png' },
         ],
-        garage: [
-            { prefix: 'g', id: '1', name: 'Floor Plan', url: './images/garage-floor-plan.png' },
-            { prefix: 'g', id: '2', name: '', url: './images/garage-floor.png' },
-            { prefix: 'g', id: '3', name: '', url: './images/garage-floor-2.png' },
-            { prefix: 'g', id: '4', name: '', url: './images/garage-floor-3.png' },
+        floor_plans: [
+            { prefix: 'f', id: '1', name: 'Garage', url: './images/garage-floor-plan.png' },
+            { prefix: 'f', id: '2', name: 'Main Floor (2nd)', url: './images/2nd-floor-plan.png' },
+            { prefix: 'f', id: '3', name: 'Top Floor (3rd)', url: './images/3rd-floor-plan.png' },
         ],
-        second: [
-            { prefix: '2', id: '1', name: '', url: './images/2nd-floor-plan.png' },
-            { prefix: '2', id: '2', name: '', url: './images/2nd-floor.png' },
-            { prefix: '2', id: '10', name: '', url: './images/2nd-floor-9.png' },
-            { prefix: '2', id: '8', name: '', url: './images/2nd-floor-7.png' },
-            { prefix: '2', id: '3', name: '', url: './images/2nd-floor-2.png' },
-            { prefix: '2', id: '4', name: '', url: './images/2nd-floor-3.png' },
-            { prefix: '2', id: '5', name: '', url: './images/2nd-floor-4.png' },
-            { prefix: '2', id: '6', name: '', url: './images/2nd-floor-5.png' },
-            { prefix: '2', id: '7', name: '', url: './images/2nd-floor-6.png' },
-            { prefix: '2', id: '9', name: '', url: './images/2nd-floor-8.png' },
+        top_render: [
+            { prefix: 't', id: '1', name: 'Garage', url: './images/garage-floor-render.png' },
+            { prefix: 't', id: '2', name: 'Main Floor (2nd)', url: './images/2nd-floor-render.png' },
+            { prefix: 't', id: '3', name: 'Top Floor (3rd)', url: './images/3rd-floor-render.png' },
         ],
-        third: [
-            { prefix: '3', id: '1', name: '', url: './images/3rd-floor-plan.png' },
-            // { prefix: '3', id: '2', name: '', url: './images/3rd-floor.png' },
-            { prefix: '3', id: '4', name: '', url: './images/3rd-floor-3.png' },
-            { prefix: '3', id: '6', name: '', url: './images/3rd-floor-5.png' },
-            { prefix: '3', id: '3', name: '', url: './images/3rd-floor-2.png' },
-            { prefix: '3', id: '5', name: '', url: './images/3rd-floor-4.png' },
+        gallery: [
+            { prefix: 'g', id: '1', name: 'Garage facing street', url: './images/garage-floor-2.png' },
+            { prefix: 'g', id: '2', name: 'Garage facing canal', url: './images/garage-floor-3.png' },
+            { prefix: '2', id: '10', name: 'Main Floor facing West', url: './images/2nd-floor-9.png' },
+            { prefix: '2', id: '3', name: 'Main Floor facing West', url: './images/2nd-floor-2.png' },
+            { prefix: '2', id: '5', name: 'Main Floor Facing North', url: './images/2nd-floor-4.png' },
+            { prefix: '2', id: '6', name: 'Main Floor facing South', url: './images/2nd-floor-5.png' },
+            { prefix: '2', id: '7', name: 'Main Floor Workroom facing West', url: './images/2nd-floor-6.png' },
+            { prefix: '3', id: '3', name: 'Top Floor facing South', url: './images/3rd-floor-2.png' },
         ],
+        // garage: [
+        //     { prefix: 'f', id: '1', name: 'Floor Plan', url: './images/garage-floor-plan.png' },
+        //     { prefix: 'g', id: '2', name: '', url: './images/garage-floor.png' },
+        //     { prefix: 'g', id: '3', name: '', url: './images/garage-floor-2.png' },
+        //     { prefix: 'g', id: '4', name: '', url: './images/garage-floor-3.png' },
+        // ],
+        // second: [
+        //     { prefix: '2', id: '1', name: '', url: './images/2nd-floor-plan.png' },
+        //     { prefix: '2', id: '2', name: '', url: './images/2nd-floor.png' },
+        //     { prefix: '2', id: '10', name: '', url: './images/2nd-floor-9.png' },
+        //     { prefix: '2', id: '8', name: '', url: './images/2nd-floor-7.png' },
+        //     { prefix: '2', id: '3', name: '', url: './images/2nd-floor-2.png' },
+        //     { prefix: '2', id: '4', name: '', url: './images/2nd-floor-3.png' },
+        //     { prefix: '2', id: '5', name: '', url: './images/2nd-floor-4.png' },
+        //     { prefix: '2', id: '6', name: '', url: './images/2nd-floor-5.png' },
+        //     { prefix: '2', id: '7', name: '', url: './images/2nd-floor-6.png' },
+        //     { prefix: '2', id: '9', name: '', url: './images/2nd-floor-8.png' },
+        // ],
+        // third: [
+        //     { prefix: '3', id: '1', name: '', url: './images/3rd-floor-plan.png' },
+        //     // { prefix: '3', id: '2', name: '', url: './images/3rd-floor.png' },
+        //     { prefix: '3', id: '4', name: '', url: './images/3rd-floor-3.png' },
+        //     { prefix: '3', id: '6', name: '', url: './images/3rd-floor-5.png' },
+        //     { prefix: '3', id: '3', name: '', url: './images/3rd-floor-2.png' },
+        //     { prefix: '3', id: '5', name: '', url: './images/3rd-floor-4.png' },
+        // ],
     }
     w3.includeHTML(() => {
         // w3.displayObject("property", content);
         w3.displayObject("overview", content);
-        w3.displayObject("garage", content);
-        w3.displayObject("second", content);
-        w3.displayObject("third", content);
+        w3.displayObject("floor_plans", content);
+        w3.displayObject("top_render", content);
+        w3.displayObject("gallery", content);
+        // w3.displayObject("garage", content);
+        // w3.displayObject("second", content);
+        // w3.displayObject("third", content);
     });
 
     function openCity(cityName) {
