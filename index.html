@@ -92,7 +92,7 @@
     }
     let folders = [];
     let filenames = [];
-    fetch('./images')
+    fetch('./images/')
         .then((v) => { return v.text(); })
         .then((v) => {
             filenames = v.split('</head>')[1]
