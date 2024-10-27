@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<title>Anchor Bay Cottage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<style>
+    body {
+        background-color: #000000cf;
+        color: white;
+        padding: 2%;
+        /* font-family: cursive !important; */
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: Verdana;
+    }
+
+    @media (min-width: 993px) {
+        .w3-modal-content {
+            width: 90%;
+        }
+    }
+
+    .w3-card {
+        min-height: 100px;
+    }
+
+    img {
+        cursor: pointer;
+    }
+</style>
+
+<body class="">
+
+    <div class="w3-container" style="background-color:#003158;">
+        <h2>Anchor Bay House<div class="w3-medium _w3-right">2024.10.22</div>
+        </h2>
+    </div>
+
+    <div class="w3-bar w3-black">
+        <!-- <button id="btn-tab-property" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
+            onclick="openCity('tab-property')">Property</button>
+        <button id="btn-tab-option-3" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
+            onclick="openCity2('option-3')">Option 3</button> -->
+        <button id="btn-tab-overview" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
+            onclick="openCity('tab-overview')">Overview<span class="w3-small w3-text-gray"
+                style="padding-left:10px;">30x50 (2)</span></button>
+        <!-- <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor
+            Detail</button> -->
+        <button id="btn-tab-3d-viewer" class="w3-bar-item w3-button" onclick="openCity('tab-3d-viewer')">3d
+            Viewer</button>
+    </div>
+
+
+    <!-- Overview -->
+    <div id="tab-overview" class="w3-container city" style="_display:none;">
+        <h6 style="border-bottom: 1px solid">Overview</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="overview">
+                <div>
+                    <div w3-repeat="overview" class="w3-card w3-padding w3-col s12 m6 l3">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h6 style="border-bottom: 1px solid">Floor Plans</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="floor_plans">
+                <div>
+                    <div w3-repeat="floor_plans" class="w3-card w3-padding w3-col s12 m6 l3">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h6 style="border-bottom: 1px solid">Floor Rendering</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="top_render">
+                <div>
+                    <div w3-repeat="top_render" class="w3-card w3-padding w3-col s12 m6 l3">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h6 style="border-bottom: 1px solid">Gallery</h6>
+        <div class="w3-row-padding w3-margin-top">
+            <div id="gallery">
+                <div>
+                    <div w3-repeat="gallery" class="w3-card w3-padding w3-col s12 m6 l3">
+                        <div w3-include-html="cards.html"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-3d-viewer" class="w3-container city" style="display:none">
+        <div data-share="041401252323452" data-version="1" class="ca-3d-viewer-embed">
+            <p><a href="https://www.chiefarchitect.com/to/view-3dv?share=041401252323452"
+                    class="ca-3d-viewer-embed-url">View <strong>2024.10.19_3rd_floor_main_30x50</strong></a> in Chief
+                Architect&rsquo;s 3D Viewer.</p>
+        </div>
+        <script async src="https://embed.chiefarchitect.com/3DV/embed.js"></script>
+    </div>
+
+    <div id="tab-property" class="w3-container city" style="display:none;">
+        <h6 style="border-bottom: 1px solid">Overview</h6>
+        <div id="output-drone" class="w3-row" style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
+        </div>
+        <h6 style="border-bottom: 1px solid">Overview</h6>
+        <div id="output-plan" class="w3-row" style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
+        </div>
+        <h6 style="border-bottom: 1px solid">Floor Plans</h6>
+        <div id="output-render" class="w3-row" style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
+        </div>
+        <h6 style="border-bottom: 1px solid">Gallery</h6>
+        <div id="output-gallery" class="w3-row" style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    const replaceAll = (text, search, replace) => {
+        while (text.indexOf(search) >= 0) {
+            text = text.replace(search, replace);
+        }
+        return text;
+    }
+    let folders = [];
+    let filenames = [];
+    fetch('./images')
+        .then((v) => { return v.text(); })
+        .then((v) => {
+            filenames = v.split('</head>')[1]
+                .split('\n')
+                .filter((v2) => v2.indexOf('<li>') === 0)
+                .map((v2) => v2.replace('<li><a href="', '.'))
+                .map((v2) => v2.substr(0, v2.indexOf('"')));
+            folders = filenames.filter((v2) => !v2.endsWith('png'));
+            filenames = filenames.filter((v2) => v2.endsWith('png'));
+            console.log(folders, filenames);
+
+
+            fetch('./card-2.html')
+                .then((v) => { return v.text(); })
+                .then((v) => {
+                    // console.log(v);
+                    let html = '';
+                    // [
+                    //     { name: 'Option 1', url: './images/garage-floor-plan.png' },
+                    //     { name: 'Option 2', url: './images/2nd-floor-render.png' },
+                    //     { name: 'Option 3', url: './images/3rd-floor-render.png' }
+                    // ].forEach((tab, i) => {
+                    //     let temp = replaceAll(v, '{{url}}', tab.url);
+                    //     temp = temp.replace('{{name}}', tab.name);
+                    //     html += temp;
+                    // });
+
+                    ['-drone', '-plan', '-render', '-gallery'].forEach((filter) => {
+                        html = '';
+                        filenames.filter((f) => f.indexOf(filter) >= 0)
+                            .forEach((filename, i) => {
+                                let name = filename.replace('./images/', '');
+                                name = name.replace('.png', '');
+                                let temp = replaceAll(v, '{{url}}', filename);
+                                temp = temp.replace('{{name}}', name);
+                                html += temp;
+                            })
+                        document.getElementById(`output${filter}`).innerHTML = html;
+                    })
+                });
+        });
+
+    // fetch('./card-2.html')
+    //     .then((v) => { return v.text(); })
+    //     .then((v) => {
+    //         // console.log(v);
+    //         let html = '';
+    //         [
+    //             { name: 'Option 1', url: './images/garage-floor-plan.png' },
+    //             { name: 'Option 2', url: './images/2nd-floor-render.png' },
+    //             { name: 'Option 3', url: './images/3rd-floor-render.png' }
+    //         ].forEach((tab, i) => {
+    //             let temp = replaceAll(v, '{{url}}', tab.url);
+    //             temp = temp.replace('{{name}}', tab.name);
+    //             html += temp;
+    //         });
+    //         filenames.forEach((filename, i) => {
+    //             let temp = replaceAll(v, '{{url}}', filename);
+    //             temp = temp.replace('{{name}}', filename);
+    //             html += temp;
+    //         })
+    //         document.getElementById('output').innerHTML = html;
+    //     });
+
+    const obj = {
+        tabs: [
+            { name: 'Option 1', url: './images/garage-floor-plan.png' },
+            { name: 'Option 2', url: './images/2nd-floor-render.png' },
+            { name: 'Option 3', url: './images/3rd-floor-render.png' }
+        ],
+        lines: [{ v2: 1 }, { v2: 2 }, { v2: 3 }],
+    };
+    // w3.includeHTML(() => {
+    //     setTimeout(() => {
+    //         console.log('done');
+    //         w3.displayObject("test", obj);
+    //         document.getElementById('test').style.display = '';
+    //     }, 3000);
+    // });
+
+    const content = {
+        property: [
+            // { prefix: 'p', id: '1', name: '', url: './images/lot-1.png' },
+            // { prefix: 'p', id: '2', name: '', url: './images/lot-2.png' },
+            // { prefix: 'p', id: '3', name: '', url: './images/lot-3.png' },
+            // { prefix: 'p', id: '4', name: '', url: './images/lot-4.png' },
+            // { prefix: 'p', id: '5', name: '', url: './images/lot-5.png' },
+            // { prefix: 'p', id: '6', name: '', url: './images/lot-6.png' },
+        ],
+        overview: [
+            // { prefix: 'o', id: '1', name: '', url: './images/lot-3.png' },
+            // { prefix: '0', id: '2', name: '', url: './images/lot-4.png' },
+            { prefix: 'o', id: '3', name: 'Street Side', url: './images/overview-1.png' },
+            { prefix: 'o', id: '4', name: 'Canal Side', url: './images/overview-3.png' },
+        ],
+        floor_plans: [
+            { prefix: 'f', id: '1', name: 'Garage', url: './images/1st-floor-plan.png' },
+            { prefix: 'f', id: '2', name: 'Main Floor (2nd)', url: './images/2nd-floor-plan.png' },
+            { prefix: 'f', id: '3', name: 'Top Floor (3rd)', url: './images/3rd-floor-plan.png' },
+        ],
+        top_render: [
+            { prefix: 't', id: '1', name: 'Garage', url: './images/1st-floor-render.png' },
+            { prefix: 't', id: '2', name: 'Main Floor (2nd)', url: './images/2nd-floor-render.png' },
+            { prefix: 't', id: '3', name: 'Top Floor (3rd)', url: './images/3rd-floor-render.png' },
+        ],
+        gallery: [
+            { prefix: 'g', id: '1', name: 'Garage facing street', url: './images/garage-floor-2.png' },
+            { prefix: 'g', id: '2', name: 'Garage facing canal', url: './images/garage-floor-3.png' },
+            { prefix: '2', id: '10', name: 'Main Floor facing West', url: './images/2nd-floor-9.png' },
+            { prefix: '2', id: '3', name: 'Main Floor facing West', url: './images/2nd-floor-2.png' },
+            { prefix: '2', id: '5', name: 'Main Floor Facing North', url: './images/2nd-floor-4.png' },
+            { prefix: '2', id: '6', name: 'Main Floor facing South', url: './images/2nd-floor-5.png' },
+            { prefix: '2', id: '7', name: 'Main Floor Workroom facing West', url: './images/2nd-floor-6.png' },
+            { prefix: '3', id: '3', name: 'Top Floor facing South', url: './images/3rd-floor-2.png' },
+        ],
+        // garage: [
+        //     { prefix: 'f', id: '1', name: 'Floor Plan', url: './images/garage-floor-plan.png' },
+        //     { prefix: 'g', id: '2', name: '', url: './images/garage-floor.png' },
+        //     { prefix: 'g', id: '3', name: '', url: './images/garage-floor-2.png' },
+        //     { prefix: 'g', id: '4', name: '', url: './images/garage-floor-3.png' },
+        // ],
+        // second: [
+        //     { prefix: '2', id: '1', name: '', url: './images/2nd-floor-plan.png' },
+        //     { prefix: '2', id: '2', name: '', url: './images/2nd-floor.png' },
+        //     { prefix: '2', id: '10', name: '', url: './images/2nd-floor-9.png' },
+        //     { prefix: '2', id: '8', name: '', url: './images/2nd-floor-7.png' },
+        //     { prefix: '2', id: '3', name: '', url: './images/2nd-floor-2.png' },
+        //     { prefix: '2', id: '4', name: '', url: './images/2nd-floor-3.png' },
+        //     { prefix: '2', id: '5', name: '', url: './images/2nd-floor-4.png' },
+        //     { prefix: '2', id: '6', name: '', url: './images/2nd-floor-5.png' },
+        //     { prefix: '2', id: '7', name: '', url: './images/2nd-floor-6.png' },
+        //     { prefix: '2', id: '9', name: '', url: './images/2nd-floor-8.png' },
+        // ],
+        // third: [
+        //     { prefix: '3', id: '1', name: '', url: './images/3rd-floor-plan.png' },
+        //     // { prefix: '3', id: '2', name: '', url: './images/3rd-floor.png' },
+        //     { prefix: '3', id: '4', name: '', url: './images/3rd-floor-3.png' },
+        //     { prefix: '3', id: '6', name: '', url: './images/3rd-floor-5.png' },
+        //     { prefix: '3', id: '3', name: '', url: './images/3rd-floor-2.png' },
+        //     { prefix: '3', id: '5', name: '', url: './images/3rd-floor-4.png' },
+        // ],
+        option_2: [
+
+        ]
+    }
+    w3.includeHTML(() => {
+        // w3.displayObject("property", content);
+        w3.displayObject("overview", content);
+        w3.displayObject("floor_plans", content);
+        w3.displayObject("top_render", content);
+        w3.displayObject("gallery", content);
+        // w3.displayObject("garage", content);
+        // w3.displayObject("second", content);
+        // // w3.displayObject("third", content);
+    });
+
+    // function loadImages(folder) {
+    //     let folders = [];
+    //     let filenames = [];
+    //     fetch(`${folder}`)
+    //         .then((v) => { return v.text(); })
+    //         .then((v) => {
+    //             filenames = v.split('</head>')[1]
+    //                 .split('\n')
+    //                 .filter((v2) => v2.indexOf('<li>') === 0)
+    //                 .map((v2) => v2.replace('<li><a href="', '.'))
+    //                 .map((v2) => v2.substr(0, v2.indexOf('"')));
+    //             folders = filenames.filter((v2) => !v2.endsWith('png'));
+    //             filenames = filenames.filter((v2) => v2.endsWith('png'));
+    //             console.log(folders, filenames);
+
+
+    //             fetch('./card-2.html')
+    //                 .then((v) => { return v.text(); })
+    //                 .then((v) => {
+    //                     let html = '';
+    //                     ['-drone', '-plan', '-render', '-gallery'].forEach((filter) => {
+    //                         html = '';
+    //                         filenames.filter((f) => f.indexOf(filter) >= 0)
+    //                             .forEach((filename, i) => {
+    //                                 let name = filename.replace('./images/', '');
+    //                                 name = name.replace('.png', '');
+    //                                 let temp = replaceAll(v, '{{url}}', filename);
+    //                                 temp = temp.replace('{{name}}', name);
+    //                                 html += temp;
+    //                             })
+    //                         document.getElementById(`output${filter}`).innerHTML = html;
+    //                     })
+    //                 });
+    //         });
+    // }
+    // function openCity2(cityName) {
+    //     var i;
+    //     var x = document.getElementsByClassName("city");
+    //     for (i = 0; i < x.length; i++) {
+    //         x[i].style.display = "none";
+    //     }
+    //     // document.getElementById(cityName).style.display = "block";
+
+    //     ['btn-tab-overview', 'btn-tab-3d-viewer'].forEach((v) => {
+    //         document.getElementById(v).style.borderBottom = null;
+    //     })
+    //     document.getElementById('btn-tab-' + cityName).style.borderBottom = '7px solid #0467b6';
+
+    //     // /** load images */
+    //     loadImages(`./images/${cityName}`);
+    // }
+    function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+        ['btn-tab-overview', 'btn-tab-3d-viewer'].forEach((v) => {
+            document.getElementById(v).style.borderBottom = null;
+        })
+        document.getElementById('btn-tab-' + cityName).style.borderBottom = '7px solid #0467b6';
+
+        // /** load images */
+        // loadImages('./images');
+    }
+</script>
+
+</html>
