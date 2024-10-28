@@ -26,8 +26,9 @@
     ],
     "./images/2-Option%202": [
         "./images/2-Option%202/1-canal-drone.png",
-        "./images/2-Option%202/1-plan-2nd.png",
+        "./images/2-Option%202/1-plan-1st.png",
         "./images/2-Option%202/2-canal-drone.png",
+        "./images/2-Option%202/2-plan-2nd.png",
         "./images/2-Option%202/2-render-2nd.png"
     ],
     "./images/3-Option%203": [
