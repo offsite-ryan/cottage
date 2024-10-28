@@ -84,12 +84,10 @@
 
 <script>
 
-    let config = null;
+    let config = {};
 
     async function create_config() {
         return new Promise((resolve) => {
-
-            const config = {};
             let folders = [];
             let filenames = [];
             fetch('./images/')
@@ -102,10 +100,10 @@
                         .map((v2) => v2.substr(0, v2.indexOf('"')));
                     folders = filenames.filter((v2) => !v2.endsWith('png'));
                     // filenames = filenames.filter((v2) => v2.endsWith('png'));
-                    console.log(folders, filenames);
+                    // console.log(folders, filenames);
 
                     // /** add the tabs */
-                    folders.forEach((folder) => {
+                    folders.forEach((folder, i) => {
                         config[folder] = [];
 
                         fetch(folder)
@@ -117,25 +115,49 @@
                                     .map((v2) => v2.replace('<li><a href="', '.'))
                                     .map((v2) => v2.substr(0, v2.indexOf('"')));
                                 filenames = filenames.filter((v2) => v2.endsWith('png'));
-                                console.log(filenames);
+                                // console.log(filenames);
 
                                 // /** add the tabs */
                                 filenames.forEach((filename) => {
                                     config[folder].push(filename);
-                                })
-                                console.table('===== CONFIGURATION =====', config);
+                                });
+                                if (i === folders.length - 1) {
+                                    resolve();
+                                }
                             });
                     })
-                    resolve();
                 });
         })
     };
+    function processConfiguration() {
+        // /** create tab buttons and load the first page */
+        let html_tabs = ``;
+            Object.keys(config).forEach((k, i) => {
+                let folder = k.replace('./images/', '').replace('%20', ' ');
+                const text = folder.substring(2);
+                let html = `<button id="btn-tab-${folder}" class="w3-bar-item w3-button" style="${i === 0 ? 'border-bottom:7px solid #0467b6;' : ''}"
+                    onclick="openCity2('${folder}')">${text}</button>`;
+                html_tabs += html;
+            });
+            document.getElementById('tabs').innerHTML = html_tabs;
+            loadImages('./images/0-Lot');
+    }
     let querystring = window.location.search.substring(1);
     const generate = querystring.toLowerCase() === 'generate=true';
     console.log(generate, querystring);
     if (generate) {
+        /** local hosting allows reading the file list from  server */
         create_config().then(() => {
-            // loadImages('./images/0-Lot');
+            console.table('===== CONFIGURATION =====', config);
+            processConfiguration();
+        });
+    } else {
+        fetch('./config.json')
+        .then((v) => { return v.text(); })
+        .then(async (v) => {
+            config = JSON.parse(v);
+            // console.log(config);
+            processConfiguration();
         });
     }
 
@@ -146,25 +168,13 @@
         return text;
     }
 
-    fetch('./config.json')
-        .then((v) => { return v.text(); })
-        .then(async (v) => {
-            config = JSON.parse(v);
-            console.log(config);
-
-
-            // /** folders */
-            let html_tabs = ``;
-            Object.keys(config).forEach((k, i) => {
-                let folder = k.replace('./images/', '').replace('%20', ' ');
-                const text = folder.substring(2);
-                let html = `<button id="btn-tab-${folder}" class="w3-bar-item w3-button" style="${i === 0 ? 'border-bottom:7px solid #0467b6;' : ''}"
-                    onclick="openCity2('${folder}')">${text}</button>`;
-                html_tabs += html;
-            });
-            document.getElementById('tabs').innerHTML = html_tabs;
-            loadImages('./images/0-Lot');
-        });
+    // /** Read Configuration File (Folders & Image Files) */
+    // fetch('./config.json')
+    //     .then((v) => { return v.text(); })
+    //     .then(async (v) => {
+    //         config = JSON.parse(v);
+    //         // console.log(config);
+    //     });
 
     function loadImages(folder) {
         console.log(folder);
