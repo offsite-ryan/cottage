@@ -70,6 +70,10 @@
     </div> -->
 
     <div id="tab-property" class="w3-container city" style="">
+        <!-- <video width="320" height="240" controls>
+            <source src="./images/1-Option 1C/test.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video> -->
         <div id="output-drone" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
         </div>
         <div id="output-plan" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
@@ -115,6 +119,8 @@
                                         .filter((v2) => v2.indexOf('<li>') === 0)
                                         .map((v2) => v2.replace('<li><a href="', '.'))
                                         .map((v2) => v2.substr(0, v2.indexOf('"')));
+                                    const link = filenames.filter((v2) => v2.endsWith('link.html'))[0] || '';
+                                    config[folder].push(link);
                                     filenames = filenames.filter((v2) => v2.endsWith('png'));
                                     // console.log(filenames);
 

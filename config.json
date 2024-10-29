@@ -1,5 +1,6 @@
 {
     "./images/0-Lot": [
+        "",
         "./images/0-Lot/1-drone-Lot%20Location.png",
         "./images/0-Lot/2-drone-Lot%20Location.png",
         "./images/0-Lot/3-drone-Lot%20Location.png",
@@ -8,6 +9,7 @@
         "./images/0-Lot/6-gallery-Lot%20Easement.png"
     ],
     "./images/1-Option%201A": [
+        "",
         "./images/1-Option%201A/1-drone-Canel%20facing%20North.png",
         "./images/1-Option%201A/1-gallery-Living%20Facing%20East.png",
         "./images/1-Option%201A/1-plan-1st%20Floor(West%20at%20Top).png",
@@ -25,6 +27,7 @@
         "./images/1-Option%201A/6-gallery-Living%206.png"
     ],
     "./images/1-Option%201B": [
+        "",
         "./images/1-Option%201B/1-drone-Canel%20facing%20North.png",
         "./images/1-Option%201B/1-gallery-Living%20Facing%20East.png",
         "./images/1-Option%201B/1-plan-1st%20Floor(West%20at%20Top).png",
@@ -41,6 +44,7 @@
         "./images/1-Option%201B/5-gallery-Living%205.png"
     ],
     "./images/1-Option%201C": [
+        "",
         "./images/1-Option%201C/1-drone-Canel%20facing%20North.png",
         "./images/1-Option%201C/1-gallery-Living%20Facing%20East.png",
         "./images/1-Option%201C/1-plan-1st%20Floor(West%20at%20Top).png",
@@ -58,6 +62,7 @@
         "./images/1-Option%201C/6-gallery-Top%20Floor%20.png"
     ],
     "./images/9-Ideas": [
+        "",
         "./images/9-Ideas/01-gallery.png",
         "./images/9-Ideas/02-gallery.png",
         "./images/9-Ideas/03-gallery.png",
@@ -85,6 +90,7 @@
         "./images/9-Ideas/25-gallery.png"
     ],
     "./images/9-Info": [
+        "",
         "./images/9-Info/1-gallery-Wood%20Beam%20Joists%20Specs.png",
         "./images/9-Info/2-gallery-Wood%20Floor%20Joists%20Specs.png"
     ]
