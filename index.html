@@ -104,27 +104,29 @@
 
                     // /** add the tabs */
                     folders.forEach((folder, i) => {
-                        config[folder] = [];
+                        if (folder.indexOf('./images/_') !== 0) {
+                            config[folder] = [];
 
-                        fetch(folder)
-                            .then((v) => { return v.text(); })
-                            .then((v) => {
-                                filenames = v.split('</head>')[1]
-                                    .split('\n')
-                                    .filter((v2) => v2.indexOf('<li>') === 0)
-                                    .map((v2) => v2.replace('<li><a href="', '.'))
-                                    .map((v2) => v2.substr(0, v2.indexOf('"')));
-                                filenames = filenames.filter((v2) => v2.endsWith('png'));
-                                // console.log(filenames);
+                            fetch(folder)
+                                .then((v) => { return v.text(); })
+                                .then((v) => {
+                                    filenames = v.split('</head>')[1]
+                                        .split('\n')
+                                        .filter((v2) => v2.indexOf('<li>') === 0)
+                                        .map((v2) => v2.replace('<li><a href="', '.'))
+                                        .map((v2) => v2.substr(0, v2.indexOf('"')));
+                                    filenames = filenames.filter((v2) => v2.endsWith('png'));
+                                    // console.log(filenames);
 
-                                // /** add the tabs */
-                                filenames.forEach((filename) => {
-                                    config[folder].push(filename);
+                                    // /** add the tabs */
+                                    filenames.forEach((filename) => {
+                                        config[folder].push(filename);
+                                    });
+                                    if (i === folders.length - 1) {
+                                        resolve();
+                                    }
                                 });
-                                if (i === folders.length - 1) {
-                                    resolve();
-                                }
-                            });
+                        }
                     })
                 });
         })
@@ -132,15 +134,19 @@
     function processConfiguration() {
         // /** create tab buttons and load the first page */
         let html_tabs = ``;
-            Object.keys(config).forEach((k, i) => {
+        Object.keys(config).forEach((k, i) => {
+            if (k.indexOf('_') !== 0) {
                 let folder = k.replace('./images/', '').replace('%20', ' ');
                 const text = folder.substring(2);
-                let html = `<button id="btn-tab-${folder}" class="w3-bar-item w3-button" style="${i === 0 ? 'border-bottom:7px solid #0467b6;' : ''}"
+                let style = 'border-right:0.5px solid #505050;min-width:100px;'
+                style += i === 0 ? 'border-bottom:7px solid #0467b6;' : 'border-bottom:7px solid black';
+                let html = `<button id="btn-tab-${folder}" class="w3-bar-item w3-button" style="${style}"
                     onclick="openCity2('${folder}')">${text}</button>`;
                 html_tabs += html;
-            });
-            document.getElementById('tabs').innerHTML = html_tabs;
-            loadImages('./images/0-Lot');
+            }
+        });
+        document.getElementById('tabs').innerHTML = html_tabs;
+        loadImages('./images/0-Lot');
     }
     let querystring = window.location.search.substring(1);
     const generate = querystring.toLowerCase() === 'generate=true';
@@ -153,12 +159,12 @@
         });
     } else {
         fetch('./config.json')
-        .then((v) => { return v.text(); })
-        .then(async (v) => {
-            config = JSON.parse(v);
-            // console.log(config);
-            processConfiguration();
-        });
+            .then((v) => { return v.text(); })
+            .then(async (v) => {
+                config = JSON.parse(v);
+                // console.log(config);
+                processConfiguration();
+            });
     }
 
     const replaceAll = (text, search, replace) => {

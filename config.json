@@ -40,37 +40,32 @@
         "./images/1-Option%201B/4-gallery-Living%204.png",
         "./images/1-Option%201B/5-gallery-Living%205.png"
     ],
-    "./images/2-Option%202": [
-        "./images/2-Option%202/1-canal-drone.png",
-        "./images/2-Option%202/1-plan-1st.png",
-        "./images/2-Option%202/2-canal-drone.png",
-        "./images/2-Option%202/2-plan-2nd.png",
-        "./images/2-Option%202/2-render-2nd.png"
-    ],
-    "./images/3-Option%203": [
-        "./images/3-Option%203/1-street-drone.png",
-        "./images/3-Option%203/2-canal-drone.png",
-        "./images/3-Option%203/2nd-floor-gallery-1.png",
-        "./images/3-Option%203/2nd-floor-gallery-2.png",
-        "./images/3-Option%203/2nd-floor-gallery-3.png",
-        "./images/3-Option%203/2nd-floor-plan.png",
-        "./images/3-Option%203/2nd-floor-render-2.png",
-        "./images/3-Option%203/2nd-floor-render-3.png"
-    ],
-    "./images/4-Option%204": [
-        "./images/4-Option%204/1-%201st-floor-plan.png",
-        "./images/4-Option%204/1-%201st-floor-render.png",
-        "./images/4-Option%204/1-%20drone.png",
-        "./images/4-Option%204/2-%202nd-floor-drone.png",
-        "./images/4-Option%204/2-%202nd-floor-gallery.png",
-        "./images/4-Option%204/2-%202nd-floor-plan.png",
-        "./images/4-Option%204/2-%202nd-floor-render.png",
-        "./images/4-Option%204/3-%202nd-floor-drone.png",
-        "./images/4-Option%204/3-%203rd-floor-plan.png",
-        "./images/4-Option%204/3-%203rd-floor-render.png"
+    "./images/1-Option%201C": [
+        "./images/1-Option%201C/1-drone-Canel%20facing%20North.png",
+        "./images/1-Option%201C/1-gallery-Living%20Facing%20East.png",
+        "./images/1-Option%201C/1-plan-1st%20Floor(West%20at%20Top).png",
+        "./images/1-Option%201C/1-plan-2nd%20Floor(West%20at%20Top).png",
+        "./images/1-Option%201C/1-plan-3rd%20Floor(West%20at%20Top).png",
+        "./images/1-Option%201C/1-render-Garage.png",
+        "./images/1-Option%201C/2-drone-Canel%20Side.png",
+        "./images/1-Option%201C/2-gallery-Living%20.png",
+        "./images/1-Option%201C/2-render-2nd%20Floor.png",
+        "./images/1-Option%201C/3-drone-Street%20Side.png",
+        "./images/1-Option%201C/3-gallery-Living%20.png",
+        "./images/1-Option%201C/3-render-3rd%20Floor.png",
+        "./images/1-Option%201C/4-gallery-Living%20.png",
+        "./images/1-Option%201C/5-gallery-Top%20Floor%20.png"
     ],
     "./images/9-Ideas": [
-        "./images/9-Ideas/1-gallery.png",
+        "./images/9-Ideas/01-gallery.png",
+        "./images/9-Ideas/02-gallery.png",
+        "./images/9-Ideas/03-gallery.png",
+        "./images/9-Ideas/04-gallery.png",
+        "./images/9-Ideas/05-gallery.png",
+        "./images/9-Ideas/06-gallery.png",
+        "./images/9-Ideas/07-gallery.png",
+        "./images/9-Ideas/08-gallery.png",
+        "./images/9-Ideas/09-gallery.png",
         "./images/9-Ideas/10-gallery.png",
         "./images/9-Ideas/11-gallery.png",
         "./images/9-Ideas/12-gallery.png",
@@ -81,18 +76,15 @@
         "./images/9-Ideas/17-gallery.png",
         "./images/9-Ideas/18-gallery.png",
         "./images/9-Ideas/19-gallery.png",
-        "./images/9-Ideas/2-gallery.png",
         "./images/9-Ideas/20-gallery.png",
         "./images/9-Ideas/21-gallery.png",
         "./images/9-Ideas/22-gallery.png",
         "./images/9-Ideas/23-gallery.png",
         "./images/9-Ideas/24-gallery.png",
-        "./images/9-Ideas/3-gallery.png",
-        "./images/9-Ideas/4-gallery.png",
-        "./images/9-Ideas/5-gallery.png",
-        "./images/9-Ideas/6-gallery.png",
-        "./images/9-Ideas/7-gallery.png",
-        "./images/9-Ideas/8-gallery.png",
-        "./images/9-Ideas/9-gallery.png"
+        "./images/9-Ideas/25-gallery.png"
+    ],
+    "./images/9-Info": [
+        "./images/9-Info/1-gallery-Wood%20Beam%20Joists%20Specs.png",
+        "./images/9-Info/2-gallery-Wood%20Floor%20Joists%20Specs.png"
     ]
 }
