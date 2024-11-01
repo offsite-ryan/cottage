@@ -61,6 +61,27 @@
         "./images/1-Option%201C/5-gallery-Living%20.png",
         "./images/1-Option%201C/6-gallery-Top%20Floor%20.png"
     ],
+    "./images/1-Option%201E": [
+        "",
+        "./images/1-Option%201E/1-gallery-Garage.png",
+        "./images/1-Option%201E/1st-floor-plan.png",
+        "./images/1-Option%201E/2-gallery-Garage.png",
+        "./images/1-Option%201E/3-gallery-Garage.png"
+    ],
+    "./images/1-Option%201G": [
+        "",
+        "./images/1-Option%201G/1-gallery-South%20at%20Top.png",
+        "./images/1-Option%201G/1-plan-1st-floor.png",
+        "./images/1-Option%201G/2-gallery-South%20at%20Top.png"
+    ],
+    "./images/1-Option%201H": [
+        "",
+        "./images/1-Option%201H/1-gallery-Garage.png",
+        "./images/1-Option%201H/1-render-Garage.png",
+        "./images/1-Option%201H/2-gallery-Garage.png",
+        "./images/1-Option%201H/3-gallery-Garage.png",
+        "./images/1-Option%201H/4-gallery-Garage.png"
+    ],
     "./images/9-Ideas": [
         "",
         "./images/9-Ideas/01-gallery.png",
@@ -92,6 +113,8 @@
     "./images/9-Info": [
         "",
         "./images/9-Info/1-gallery-Wood%20Beam%20Joists%20Specs.png",
-        "./images/9-Info/2-gallery-Wood%20Floor%20Joists%20Specs.png"
+        "./images/9-Info/2-gallery-Wood%20Floor%20Joists%20Specs.png",
+        "./images/9-Info/3-gallery-deck%20Patio%20Rules.png",
+        "./images/9-Info/4-gallery-deck%20Patio%20Rules.png"
     ]
 }
