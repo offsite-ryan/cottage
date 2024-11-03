@@ -1,4 +1,4 @@
-{
+v{
     "./images/0-Lot": [
         "",
         "./images/0-Lot/1-drone-Lot%20Location.png",
@@ -23,6 +23,7 @@
         "./images/1-Plan/3-plan-3rd%20Floor(West%20at%20Top).png",
         "./images/1-Plan/3-render-3rd%20Floor(West%20at%20Top).png",
         "./images/1-Plan/4-_drone-3D%20Viewer.png",
+        "./images/1-Plan/4-drone-Canal%20View%20(2).png",
         "./images/1-Plan/4-gallery-3rd%20Floor.png",
         "./images/1-Plan/4-plan-Elevation.png",
         "./images/1-Plan/5-gallery-2nd%20Floor.png",
