@@ -29,6 +29,19 @@
         "./images/1-Plan/5-gallery-2nd%20Floor.png",
         "./images/1-Plan/6-gallery-2nd%20Floor.png"
     ],
+    "./images/1-Plan%20B": [
+        "",
+        "./images/1-Plan%20B/1-drone-Canal%20View.png",
+        "./images/1-Plan%20B/1-plan-1st%20Floor(West%20at%20Top).png",
+        "./images/1-Plan%20B/1-render-1st%20Floor.png",
+        "./images/1-Plan%20B/2-plan-2nd%20Floor(West%20at%20Top).png",
+        "./images/1-Plan%20B/2-render-1st%20Floor.png",
+        "./images/1-Plan%20B/3-drone-Street%20View.png",
+        "./images/1-Plan%20B/3-render-1st%20Floor.png",
+        "./images/1-Plan%20B/4-render-2nd%20Floor.png",
+        "./images/1-Plan%20B/5-render-1st%20Floor.png",
+        "./images/1-Plan%20B/5-render-Garage.png"
+    ],
     "./images/9-Info": [
         "",
         "./images/9-Info/1-gallery-Wood%20Beam%20Joists%20Specs.png",
