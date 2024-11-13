@@ -34,6 +34,7 @@
         "./images/1-Plan%20B/1-drone-Canal%20View.png",
         "./images/1-Plan%20B/1-plan-1st%20Floor(West%20at%20Top).png",
         "./images/1-Plan%20B/1-render-1st%20Floor.png",
+        "./images/1-Plan%20B/2-drone-Canal%20View.png",
         "./images/1-Plan%20B/2-plan-2nd%20Floor(West%20at%20Top).png",
         "./images/1-Plan%20B/2-render-1st%20Floor.png",
         "./images/1-Plan%20B/3-drone-Street%20View.png",
@@ -49,6 +50,8 @@
         "./images/9-Info/3-gallery-deck%20Patio%20Rules.png",
         "./images/9-Info/4-gallery-deck%20Patio%20Rules.png",
         "./images/9-Info/4-gallery-Setbacks.png",
-        "./images/9-Info/5-gallery-Ordinance%20Feedback.png"
+        "./images/9-Info/5-gallery-Ordinance%20Feedback.png",
+        "./images/9-Info/6-gallery-Metal%20Building.png",
+        "./images/9-Info/7-gallery-Metal%20Building.png"
     ]
 }
