@@ -51,9 +51,9 @@
             onclick="openCity('tab-overview')">Option 1<span class="w3-small w3-text-gray"
                 style="padding-left:10px;">30x50 (2)</span></button>
         <button id="btn-tab-Option 3" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
-            onclick="openCity2('Option 3')">Option 3</button>
+            onclick="openTab('Option 3')">Option 3</button>
         <button id="btn-tab-Option 4" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
-            onclick="openCity2('Option 4')">Option 4</button>
+            onclick="openTab('Option 4')">Option 4</button>
         <!-- <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor
             Detail</button> -->
         <button id="btn-tab-3d-viewer" class="w3-bar-item w3-button" onclick="openCity('tab-3d-viewer')">3d
@@ -74,9 +74,17 @@
             <source src="./images/1-Option 1C/test.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video> -->
+
+        <!-- <div data-share="502502925929133" data-version="1" class="ca-3d-viewer-embed">
+            <p><a href="https://www.chiefarchitect.com/to/view-3dv?share=502502925929133" class="ca-3d-viewer-embed-url">View <strong>Plan A</strong></a> in Chief Architect&rsquo;s 3D Viewer.</p>
+        </div>
+        <script async src="https://embed.chiefarchitect.com/3DV/embed.js"></script> -->
+
         <div id="output-drone" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
         </div>
         <div id="output-plan" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
+        </div>
+        <div id="output-elevation" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
         </div>
         <div id="output-render" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
         </div>
@@ -147,7 +155,7 @@
                 let style = 'border-right:0.5px solid #505050;min-width:100px;'
                 style += i === 0 ? 'border-bottom:7px solid #0467b6;' : 'border-bottom:7px solid black';
                 let html = `<button id="btn-tab-${folder}" class="w3-bar-item w3-button" style="${style}"
-                    onclick="openCity2('${folder}')">${text}</button>`;
+                    onclick="openTab('${folder}')">${text}</button>`;
                 html_tabs += html;
             }
         });
@@ -201,8 +209,9 @@
                     '-plan': 'Floor Plan',
                     '-render': 'Floor Renderings',
                     '-gallery': 'Gallery',
+                    '-elevation': 'Elevation Views',
                 };
-                ['-drone', '-plan', '-render', '-gallery'].forEach((filter) => {
+                ['-drone', '-plan', '-render', '-gallery', '-elevation'].forEach((filter) => {
                     html = '';
                     filenames.filter((f) => f.indexOf(filter) >= 0)
                         .forEach((filename, i) => {
@@ -225,7 +234,7 @@
             });
     }
 
-    function openCity2(cityName) {
+    function openTab(name) {
         var i;
         var x = document.getElementsByClassName("w3-bar-item");
         for (i = 0; i < x.length; i++) {
@@ -233,10 +242,10 @@
         }
         document.getElementById('tab-property').style.display = "none";
         document.getElementById('tab-property').style.display = "block";
-        document.getElementById('btn-tab-' + cityName).style.borderBottom = '7px solid #0467b6';
+        document.getElementById('btn-tab-' + name).style.borderBottom = '7px solid #0467b6';
 
         // /** load images */
-        loadImages(`./images/${cityName}`);
+        loadImages(`./images/${name}`);
     }
 
 </script>
