@@ -54,32 +54,11 @@
             onclick="openTab('Option 3')">Option 3</button>
         <button id="btn-tab-Option 4" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
             onclick="openTab('Option 4')">Option 4</button>
-        <!-- <button id="btn-tab-floor-detail" class="w3-bar-item w3-button" onclick="openCity('tab-floor-detail')">Floor
-            Detail</button> -->
         <button id="btn-tab-3d-viewer" class="w3-bar-item w3-button" onclick="openCity('tab-3d-viewer')">3d
             Viewer</button>
     </div>
 
-    <!-- <div id="tab-3d-viewer" class="w3-container city" style="display:none">
-        <div data-share="041401252323452" data-version="1" class="ca-3d-viewer-embed">
-            <p><a href="https://www.chiefarchitect.com/to/view-3dv?share=041401252323452"
-                    class="ca-3d-viewer-embed-url">View <strong>2024.10.19_3rd_floor_main_30x50</strong></a> in Chief
-                Architect&rsquo;s 3D Viewer.</p>
-        </div>
-        <script async src="https://embed.chiefarchitect.com/3DV/embed.js"></script>
-    </div> -->
-
     <div id="tab-property" class="w3-container city" style="">
-        <!-- <video width="320" height="240" controls>
-            <source src="./images/1-Option 1C/test.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video> -->
-
-        <!-- <div data-share="502502925929133" data-version="1" class="ca-3d-viewer-embed">
-            <p><a href="https://www.chiefarchitect.com/to/view-3dv?share=502502925929133" class="ca-3d-viewer-embed-url">View <strong>Plan A</strong></a> in Chief Architect&rsquo;s 3D Viewer.</p>
-        </div>
-        <script async src="https://embed.chiefarchitect.com/3DV/embed.js"></script> -->
-
         <div id="output-drone" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
         </div>
         <div id="output-plan" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
@@ -187,14 +166,6 @@
         }
         return text;
     }
-
-    // /** Read Configuration File (Folders & Image Files) */
-    // fetch('./config.json')
-    //     .then((v) => { return v.text(); })
-    //     .then(async (v) => {
-    //         config = JSON.parse(v);
-    //         // console.log(config);
-    //     });
 
     function loadImages(folder) {
         console.log(folder);
