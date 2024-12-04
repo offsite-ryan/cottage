@@ -45,17 +45,6 @@
     </div>
 
     <div id="tabs" class="w3-bar w3-black">
-        <button id="btn-tab-property" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
-            onclick="openCity('tab-property')">Property</button>
-        <button id="btn-tab-overview" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
-            onclick="openCity('tab-overview')">Option 1<span class="w3-small w3-text-gray"
-                style="padding-left:10px;">30x50 (2)</span></button>
-        <button id="btn-tab-Option 3" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
-            onclick="openTab('Option 3')">Option 3</button>
-        <button id="btn-tab-Option 4" class="w3-bar-item w3-button" style="border-bottom:7px solid #0467b6;"
-            onclick="openTab('Option 4')">Option 4</button>
-        <button id="btn-tab-3d-viewer" class="w3-bar-item w3-button" onclick="openCity('tab-3d-viewer')">3d
-            Viewer</button>
     </div>
 
     <div id="tab-property" class="w3-container city" style="">
@@ -68,6 +57,8 @@
         <div id="output-render" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
         </div>
         <div id="output-gallery" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
+        </div>
+        <div id="output-docs" class="w3-row" _style="display:flex;flex-wrap:wrap;justify-content:flex-start;">
         </div>
     </div>
 
@@ -106,12 +97,9 @@
                                         .filter((v2) => v2.indexOf('<li>') === 0)
                                         .map((v2) => v2.replace('<li><a href="', '.'))
                                         .map((v2) => v2.substr(0, v2.indexOf('"')));
-                                    const link = filenames.filter((v2) => v2.endsWith('link.html'))[0] || '';
-                                    config[folder].push(link);
                                     filenames = filenames.filter((v2) => v2.endsWith('png'));
-                                    // console.log(filenames);
 
-                                    // /** add the tabs */
+                                    // /** add the filenames to the folder */
                                     filenames.forEach((filename) => {
                                         config[folder].push(filename);
                                     });

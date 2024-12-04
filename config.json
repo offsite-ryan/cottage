@@ -1,6 +1,6 @@
 {
     "./images/0-Lot": [
-        "",
+        "./images/0-Lot/0-drone-Lot%20Location.png",
         "./images/0-Lot/1-drone-Lot%20Location.png",
         "./images/0-Lot/2-drone-Lot%20Location.png",
         "./images/0-Lot/3-drone-Lot%20Location.png",
@@ -10,7 +10,6 @@
         "./images/0-Lot/7-gallery-Lot%20Utilities.png"
     ],
     "./images/1-Plan": [
-        "",
         "./images/1-Plan/1-drone-Canal%20View.png",
         "./images/1-Plan/1-elevation-Street%20(South).png",
         "./images/1-Plan/1-plan-1st%20Floor(West%20at%20Top).png",
@@ -35,12 +34,12 @@
         "./images/1-Plan/7-gallery-3rd%20Floor.png"
     ],
     "./images/9-Info": [
-        "",
         "./images/9-Info/1-gallery-Wood%20Beam%20Joists%20Specs.png",
         "./images/9-Info/2-gallery-Wood%20Floor%20Joists%20Specs.png",
         "./images/9-Info/3-gallery-deck%20Patio%20Rules.png",
         "./images/9-Info/4-gallery-deck%20Patio%20Rules.png",
         "./images/9-Info/4-gallery-Setbacks.png",
-        "./images/9-Info/5-gallery-Ordinance%20Feedback.png"
+        "./images/9-Info/5-gallery-Ordinance%20Feedback.png",
+        "./images/9-Info/6-gallery-MI%20Build%20Cost%20Breakdown.png"
     ]
 }
