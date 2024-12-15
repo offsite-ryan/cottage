@@ -27,7 +27,6 @@
         "./images/1-Plan/3-render-3rd%20Floor(West%20at%20Top).png",
         "./images/1-Plan/3-render-Side%20View.png",
         "./images/1-Plan/4-_drone-3D%20Viewer.png",
-        "./images/1-Plan/4-drone-East.png",
         "./images/1-Plan/4-elevation-Canal%20(North).png",
         "./images/1-Plan/4-gallery-3rd%20Floor.png",
         "./images/1-Plan/5-gallery-3rd%20Floor.png",
@@ -41,6 +40,7 @@
         "./images/9-Info/4-gallery-deck%20Patio%20Rules.png",
         "./images/9-Info/4-gallery-Setbacks.png",
         "./images/9-Info/5-gallery-Ordinance%20Feedback.png",
-        "./images/9-Info/6-gallery-MI%20Build%20Cost%20Breakdown.png"
+        "./images/9-Info/6-gallery-MI%20Build%20Cost%20Breakdown.png",
+        "./images/9-Info/7-gallery-Property%20Comps.png"
     ]
 }
