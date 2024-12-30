@@ -10,9 +10,8 @@
         "./images/0-Lot/7-gallery-Lot%20Utilities.png"
     ],
     "./images/1-Stage%201": [
-        "./images/1-Stage%201/0-drone-Canal%20View.png",
-        "./images/1-Stage%201/1-drone-Canal%20View%20(2).png",
-        "./images/1-Stage%201/1-elevation-Street%20(South).png",
+        "./images/1-Stage%201/1-drone-Canal%20View.png",
+        "./images/1-Stage%201/1-elevation-Street%20(North).png",
         "./images/1-Stage%201/1-gallery-2nd%20Floor.png",
         "./images/1-Stage%201/1-plan-1st%20Floor(West%20at%20Top).png",
         "./images/1-Stage%201/1-render-1st%20Floor(West%20at%20Top).png",
@@ -21,10 +20,11 @@
         "./images/1-Stage%201/2-gallery-2nd%20Floor%20(East).png",
         "./images/1-Stage%201/2-plan-2nd%20Floor(West%20at%20Top).png",
         "./images/1-Stage%201/2-render-2nd%20Floor(West%20at%20Top).png",
-        "./images/1-Stage%201/3-drone-East%20View.png",
         "./images/1-Stage%201/3-elevation-Side%20(West).png",
         "./images/1-Stage%201/3-gallery-2nd%20Floor.png",
-        "./images/1-Stage%201/4-elevation-Canal%20(North).png"
+        "./images/1-Stage%201/3-render-East%20View.png",
+        "./images/1-Stage%201/4-elevation-Canal%20(South).png",
+        "./images/1-Stage%201/4-render-West%20View.png"
     ],
     "./images/2-Stage%202": [
         "./images/2-Stage%202/1-drone-Canal%20View.png",
@@ -52,7 +52,6 @@
     ],
     "./images/9-Info": [
         "./images/9-Info/0-gallery-Property%20Comps.png",
-        "./images/9-Info/1-gallery-Build%20Cost%20Breakdown.png",
         "./images/9-Info/2-gallery-Build%20Cost%20Breakdown.png",
         "./images/9-Info/4-gallery-Build%20Cost%20Breakdown.png"
     ]
