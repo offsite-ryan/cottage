@@ -52,7 +52,7 @@
         "./images/2-Stage%202/6-gallery-3rd%20Floor.png",
         "./images/2-Stage%202/7-gallery-3rd%20Floor.png"
     ],
-    "./images/4-7299-Riverside-Dr": [
+    "_./images/4-7299-Riverside-Dr": [
         "./images/4-7299-Riverside-Dr/1-gallery-00.png",
         "./images/4-7299-Riverside-Dr/1-gallery-001.png",
         "./images/4-7299-Riverside-Dr/1-gallery-01.png",
@@ -108,7 +108,7 @@
         "./images/4-7299-Riverside-Dr/1-gallery-99.png",
         "./images/4-7299-Riverside-Dr/2025-01-19%2021_30_54-Google%20Maps.png"
     ],
-    "./images/9-Info": [
+    "_./images/9-Info": [
         "./images/9-Info/0-gallery-Property%20Comps.png",
         "./images/9-Info/2-gallery-Build%20Cost%20Breakdown.png",
         "./images/9-Info/4-gallery-Build%20Cost%20Breakdown.png"
